@@ -1,0 +1,4 @@
+numpy ve pandas ile alakalı örnekler yapmalı notları okumalıyım
+pandan da özellikle
+grafik yaptırma kısmını öğrenmeliyim
+merkezi limit teoremi örneğini yapmam lazım

@@ -1,0 +1,49 @@
+Şahsi fikrimize göre önemli bir konu 
+Çok sayıda gerçekleşen şeyler beni haklı çıkartmaz ancak tek bir deney yanıldığımı kanıtlayabilir
+Bir örneklem ortalaması ile populasyon ortalaması arasında anlamlı ilişki varmı 
+hipotez testi 3 adımdan oluşur kabaca
+1 varsayımda bulunmak
+2 veri toplamak
+3 kabul veya red
+şimdi bu süreci yürttük ve örneklemden bir sonuca vardık nbu sonuç 100 de 100 doğru diyemeyiz
+bunun bir hata payı vardır bunada örneklem hatası denir
+şurda hipotez testini bir daha sıralayalım
+1.Hipotez oluşturulur 
+H0
+H1
+2.Anlamlılık seviye 
+x
+3.Olasılık dağılımı belirlenmesi
+4.İstenilen testi
+p değeri bulunur
+5.x ve p değeri karşılaştırılır
+Hipotezin kurulması
+Boş hipotez: Hipotezimiz neyse onun yokluk halidir mesela iddia şu kullanılan iğnenik pozitif bir etkisi
+vardır sa boş hipotez yani h0 etkisi yoktur olacak 
+ama hipotez şöyle olsun bu ortalamanın anlamlı ilişkisi yoktur olursa h0 onun zıttı olarak vardır olacak
+Alternatif hipotez: Hipotezin kendisidir iddia edilen şey neyse odur 
+yani h0 red edilebilirse h1 i kabul edebiliriz fakat h0 red edilemez ise h kabul edilemezdir.
+
+Şimdi adımları tekrar yazıyorum
+hipotezi berirledik h0 ve h1 hipotezleri belli bizede bir güven aralığı verildi 
+şimdi soruya göre ya çift alan yada tek alan belirlenecek ondan sonra bu sorudaki 
+alana karşılık gelen z skor bulucaz bu bizim için kretitik değer olacak bu bulduğumuz değer elde dursun
+ondan sonra bir p değeri bulacam bu p ile z yi karşılaştırıp h0 ya red edilecek yada red edilmeyeceksonra sonuca bakıcaz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

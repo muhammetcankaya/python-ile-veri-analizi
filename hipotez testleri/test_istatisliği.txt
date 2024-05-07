@@ -1,0 +1,121 @@
+Bu kısımda genel bir test istatisliği naasıl yapılır onu öğreneceğiz   74 79 eksik
+Bu kısımda testleri ve bunların ne işe yaradığını ve bunları nasıl yapacağımızı göreceğiz
+şimdi en temelde bizim bu testleri uygulamadan önce şu önemli bu veri seti 
+Parametrik mi nonParametrik(parametrik değil) mi 
+Parametrikse uygulayacağımız testler farklı değilse farklıdır o yüzden bunu bilmek analiz etmek önemli bir adımdır
+Paremetrik olma şartı (daha güçlü)
+1.verilerin normal dağılımı
+2.merkezi limit teoremini uyması (normal dağılıma sebep olur 30 dan fazla örneklem varsa normal dağılıma döneriz)
+3.veri yapımızın sürekli olması
+4.gruplar arası varyans(1-2grup)eğitim durumu cinsiyet gibi yapılar
+
+Normallik varsayımı testi:
+skewness and kurtosis değerlerini bularak buna göre normal dağılıp dağılmadığını test edebiliriz
+bu yapıda iki eksi 2 arasındaysa değerler normal dağılır denilebilir 1.5 da olabilir bu değer 1 de olabilir 
+Grafikten bakma ve Kolmogorov-Smirnow ve Shapiro-milk testleri uygulabilir
+
+Tek örneklem z testi:
+bir örneklem grubunun ortalamasının herhangi bir değer ile karşılaştırılması üzerine kullanılır
+Bu testi kullanma şartları populasyon standart sapması ve varyansı bilmek bu çok zor olduğundan veri analizinde az kullanılan basit bir testtir
+
+Tek örneklem t testi:
+bir örneklem grubunun ortalamasının herhangi bir değer ile karşılaştırılması üzerine kullanılır
+Şimdi biz tek örneklem t testi sonra iki örneklem t testi sonra 3 ve fazlası için anova göreceğiz 
+Bu yapı tek örneklem z testinden farklı değil fakat burada biz populasyon standart sapmasını bilmiyoruz yalnızca örneklem standart sapmasını bilmiyoruz
+bu yüzden öbür teste göre baya bir anlamlı olacak bu test adımları falan hipotez testinde aynı aslında yaptığımız örnekte buydu
+hipotez belir p değeri bul z değeri bul bunları kıyasla h0 red et veya kabul et 
+Zt(ztest)=(örneklem ortalaması- populasyon ortalaması)/(örneklem standart sapması / örneklem sayının karekökü)
+bunun oluşturduğu alanın büyüklüğü ile guven aralığının büyüklüğünü kıyaslayacaz örnekem sayısı 30 dan büyükde olsa küçükte olsa bu kullanılabilir
+uç değer barındırmamalıdır bunu uygulayacaksak 
+
+Bağımsız iki örneklem t testi:
+Bu testte adı üstünde iki örneklem var iki kategorik değişkene göre iki örneklem olacak ve bu iki örneklem
+ortalamalarının anlamlı bir ilişkisi var mı diye bakacaz
+işte burada hipotez şöyle oluşturuluyor H0 M1=M2 H1 M1!=M2 Tabi burda soruya göre değişir büyük diyebilir eşit değil diyebilir
+diğerinden çok farkı yok tabi bu sefer iki örneklem var nasıl yapıldığını merak ettim
+bu testin yapılabilmesi için varsayımlar çekilen veriler rastsal olmalı bağımlı değişken sürekli olmalıdır
+bağımsız değişkenler kategorik olmalıdır 
+her bir grup için bağımlı değişken normal dağılım göstermektedir
+normal dağılım yoksada örneklem sayısı 15-25-50 den büyüksede bu test uygulabilir  
+aykırı değer olmamalıdır
+varyanslar homojen olmalıdır bu şart sağlanmazsa başka özel bir durum kullanılır welch t testi
+varyansların homojenleri neden önemli 
+Şu yüzden önemli biz iki grubun ortalamaları arasında incelemeye yapacaksak ve bu gruplar örneklemse zaten örneklem olur genelde
+bu grupların varyansları homojen değilse mantıklı doğru cevaplar alamayız neden çünkü varyanslar farklı olunca grupların dağılımları farklıdırbe
+belki yani bu varyanslar homojen değiilse çok şey değişir 
+peki bunun nassıl kontrol ederiz ---bartler ve levene--- testleri
+# varyanslar homojen değilse şu taktiği uygulacaz 
+stats.ttest_ind(evet["SİGARA"],hayır["SİGARA"],alternative="two-sided",equal_var=False)
+#yapıyı bu şekilde kurmamız gerekiyor bu varyanslar homojen değil ona göre test yapıyorum demek
+
+
+Bağımlı örnekem t testi:
+B testte adı üstünde bağımlı örneklem t testi öncesi ve sonrası olan iki grubun ortalamaları arasasında anlamlı fark varmı yok mu
+diye test edeceğiz örnek vermek gerekir bir ilaç var bu ilacı bir kere alanların verisi ve iki kere alanların verisi var elimizde
+bunların ortalamaları arasında anlamlı bir fark varmı yok mu diye test edebiliriz tek bir grup üzerinden yapılır olaydan önce ve sonra
+hipotezler
+H0: ortalama_öncesi=ortalama_sonrası 
+H1: ortalama_öncesi!=ortalama_sonrası 
+H0 red edilirse anlamlı bir fark vardır red edilmez ise yoktur
+testp>güven ise H0 red edilemez testp<güven ise H0 red edilir
+testi yapma şartları rastsal değişkenlik normal dadğılım varyansların homojen dağılması gerekiyor değişkenler sürekli olmalı
+
+
+Z oran testi veya A/B testi:
+Bu testimizde aynı bağımsız iki örneklem t testi gibi fakar burada bir oran söz konusu yani burada ki veriler bir oran belirtir
+ona göre hareket ederiz ½20 gibi ifadeler bulur 
+H0: ORAN(A)=ORAN(B)
+H1: ORAN(A)!=ORAN(B) Hipotezimizi bu şekilde oluşturduk 
+varsayımlar: n>30 olmalı normal dağılmalı yani
+
+FamilyWise Error Rate-Alpha Inflation Nedir(Aile bazında hata yapısı):
+Bir konu üzerine cevap alabilmek için 1 test yapabiliryorken neden 4-5 test yapalım
+diyelimki yaptık yaparsak bu hata oranlarımız büyür şişer hatalı olur testler
+
+
+
+ANOVA(VARYANS ANALİZİ):
+Bu testi ikiden fazla grup(kategorik değişken) varken bu grupların ortalamaları arasında anlamlı bir ilişki var mı yokmu onu test ederiz
+bağımsız iki örneklem t testinin genelleştirilmiş halidir
+
+Tek Yönlü ANOVA:
+Bu yapıyı direkt örnekle açıklamakta fayda var 
+eğitim durumu dedikten sonra bu eğitim grubunun altında 4-5-6 gibi gruplar çıkabilir bu tek yönlü anova olur 
+çünkü bu gruplar bir gruba bağlı eğitim durumu [ama cinsiyet ve eğitim durumu yapsaydık mevzu bakınız eğitim durumu cinsiyete bağlı oldu]
+1 bağımsız değişken(en az 3 grup) tek yönlü anova
+şimdi biz bu anovayı yaptığımızda grupların ortalamaları arasında anlamlı bşr fark varmı buna bakıyoruz fakat burada şöyle bir durum var
+bu anova bize şunu şöylemiyor hangi grupların ortalamaları arasında bir fark var he bunu söylemediği için başka bir testten de faydalanacağız 
+POST-HOC 
+One way anovada hipotez yapısı
+H0: ortlama1=ortlama(2)=ortlama(3)....=ortlama(n)
+H1: ortlama1!=ortlama(2)!=ortlama(3)....!=ortlama(n)  [En az iki grup ortalamaları arasında fark vardır ] hangileri olduğunu past-hoc ile öğreneceğiz.
+Varsayımlar:
+1.Bağımlı değişken sürekli olmaladırı
+2.Bağımsız değişkenin kategorik olması gerekiyor
+3.Grup sayısının en az 3 olmalı
+4.Grup normal dağılmalıdır[Anova testi büyük örneklemler ile çalıştığında normallik ihlalinden etkilenmez]
+5.Varyanslar homojen olmalıdır[değilse ufak değişikle bu çözülür] print(pg.welch_anova(data=veri,dv="Tvizleme",between="Eğitim"))  import pingouin  as pg
+6.Gözlemler rastsal olarak seçilmelidir
+Bu test yapılırken (gruplar arası varyans)/(grup içi varyans) değeri bulunur F değeridir bu F tablosundan bu değere bakılır p değeri bulunur.
+
+Çift Yönlü ANOVA:
+İşte burada farklı iki bağımsız durumun aynı anda incelenmesi vardır örnekler ile çok rahat anlaşılır varsayımlar oneway ile aynıdır
+H0: ortlama1=ortlama(2)=ortlama(3)....=ortlama(n)
+H1: ortlama1!=ortlama(2)!=ortlama(3)....!=ortlama(n)
+bu test için iki kütüphane import etmemiz gerekir
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+Bu çift yönlü anovayı anladım fakat uygulamasını anlamadım burada iki tane tek yönlü anovayı birlikte yapmak için bu yapılıur diye düşün kral
+
+ONEWAY MANOVA:
+Tek değişkenli anovanın geliştirilmiş halidir
+çok değişkenli varyans analizi
+1.Gözlemlerin bağımsızlığı
+2.Her bağımlı değişken sürekli olmalıdır
+3.Normal bir dağılım lazım [ama sapsada bişey olmaz n>20 için]
+4.Varyansların homojenliği
+5.Kovaryansların eşitliği 
+1 tane bağımsız birden fazla bağımlı değişkene ihtiyacımız var
+
+
+

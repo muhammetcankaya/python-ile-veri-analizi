@@ -1,0 +1,62 @@
+Şimdi bir değişken türünün ölçeklendirilmesindeki durumlara bakalaım
+Öncelikle bildiğimiz üzere iki tür değişken vardır nicel ve nitel
+Buna kategorik ve sayısal diyebiliiriz
+Nitel(kategorik) değişkenler için iki ayrım vardır 
+Bu değişkenler sınıf belirtiyorsa yani birbiri üzerine üstünlüğü yoksa 
+Erkek kadın gibi bunlara ordinal denir sınıf belirtiyorsa yaş aralığı gibi
+Bunlara nominal denir
+
+-------MERKEZİ LİMİT TEOREMİ-------
+
+Uygun bir şekilde seçilen örneklem populasyonu temsil edecektir.
+
+Bir populasyondan seçtiğimiz rastgele alınan örneklemlerin ortalaması
+normal dağılacaktır.
+Diyelim ki 30000 elamanlı bir populasyonumuz var biz burada 10 elemanlı örneklemlerin ortalamaları
+1000 tane örneklem aldık bu örneklemlemlerin ortalamaları normal dağılacaktır
+ve bu örneklemin ortalması populasyon ortalmasına eşit olacaktır
+yani rasgele seçilen örneklem sonsuza yaklaştıkça bu örneklemlerin ortalalamaları normal dağılıma yakınsar
+bununla ilgili kendin bir örnek yapmalısın
+
+------ STANDART HATA -------
+standant sapma bölü orneklemin karakökü s/n^0.5
+orneklemlerin standart sapmasına standart hata denir
+standart hata ne kadar düşükse biz populasyon ortalamasına o kadar yakınız
+en düşük standart hata en iyi analiz
+
+------- Z SKORE --------
+Z skore formulünü zaten biliyorsun hani o normal dağılım görseli verya biz aşağıya z skorları yazıyoruz 3 e kadar
+ordan da alan hesaplayarak olasılık hesaplıyorduk hani şimdi kanka standartize edilmiş bir normal dağılım grafiğinde ortalama 0 dır 
+orda değerler vardır meseka z skore 1 iken ortalamaya bir starndart sapma uzaklıkta 
+veya z 2 ise 2 standart sapma uzaklıkta diyebiliriz
+
+----- Student's t dağılım -------
+Merkezi limit teoremini hatırlarsanız orada bir populasyona ait 30 elamanlı aldığımız örneklemlerin ortalaması normal dağılmak zorundaydaydı
+teorem buydu yani 30 ve fazlası demek daha doğru olur 30 burada önemliydi 
+diyelimki 30 tane veri yok o zaman biz örneklemler için normal dağıldı diyemeyiz o yuzden bu dağılım yapısını kullanmak zorundayız
+
+--------Olasılık Dağılımları--------------
+RASSAL DEĞİŞKEN:Bunu biliyoruz zaten bir olasılıkta oluşabilecek rassal durumlara rassal değişken denir
+e bu kısımda kesikli olasılık dağılımı ile başayacağız bunu zaten d-biliyorsun coni
+Beklenen değer=olasılık ortalaması gibi bişey bunu biliyiorsun
+Bernolli dağılımı: Bu dağılımda yalnızca iki olasılık vardır ya olur ya olmaz 
+p durumu olur q durumu olmaz bu olasılık dağılımının varyaansı ve bekenen değerini bbakabiliriz
+
+BİNOM DAĞILIMI: İki olası sonuç var diyelim n tane denemede oluşan olasılık dağılımı burada ilgilendiğimiz kısım başarılı olunan yer
+e bunun olasılık dağılım fonksiyonunu istersen bulursun sen bunu zaten biliyorsun e bunu 
+nasıl yapacağımızı gösterdiğimiz notlar tabikide olacak klasör acacam
+#bernolli=pmf
+#CDF=BİRİKİMLİ
+#PDF=olasılık dağılım fonksiyonu
+
+POİSON DAĞILIMI:Nadir gerçekleşebilecek olaylar için kullandığımız dağılım yada belirli bir zaman aralığı 
+burada lambda değeri olması lazım yani bir zaman aralığında gerçekleşen durumların durumları olmalı 
+deneme sayısı yüksek başarı onanı düşük mesela başarı durumu kaza yapılması olasıbir kavşakta 1000 araba geçer belki 2 tane kaza olur 
+bu poison dağılımı olur 
+
+KESİKLİ UNİFORM DAĞILIM:
+SÜREKLİ UNİFORM DAĞILIM:
+
+normal dağılım örnekleri yapılacak
+
+
